@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page Profissional</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-6xQjPuEGEVx3oXDoZWmZbS3GCB64gUHgEZGHNC1iOjV+3xBys4DGmh6zCAYQn8ccXqUOkduJK+RoIDZpWcGZaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -26,10 +29,10 @@
   <!-- Hero Section -->
   <section id="home" class="hero-section">
     <div class="card">
-      <h1>É mais do que um site.<br>É o seu futuro.</h1>
+      <h1>Não é só um site.<br>É a porta de entrada para o seu sucesso.</h1>
       <div class="form">
         <input type="email" id="email" placeholder="Insira seu endereço de email" />
-        <button onclick="enviarEmail()">Comece já →</button>
+        <button onclick="enviarEmail()">Clique aqui para começar →</button>
       </div>
       <p class="info">Sim, é grátis. Faça upgrade quando quiser.</p>
     </div>
@@ -68,7 +71,7 @@
   <!-- Loja -->
   <section id="loja" class="features">
     <div class="feature-card">
-      <img src="loja.png" alt="Loja virtual" />
+      <img src="loja.jpg" alt="Loja virtual" />
       <h2>Loja</h2>
       <p>Crie sua loja virtual completa, com carrinho, pagamento integrado e controle total de pedidos.</p>
       <a href="#" class="link">Abrir minha loja →</a>
@@ -78,7 +81,6 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="faq-container">
-
       <h2 style="text-align: center; color: white; margin-bottom: 30px;">Perguntas Frequentes</h2>
 
       <div class="faq-item">
@@ -112,14 +114,26 @@
         </div>
         <div class="faq-answer">Sim. Todos os sites criados na nossa plataforma são responsivos e funcionam perfeitamente em celulares, tablets e desktops.</div>
       </div>
-
     </div>
   </section>
 
   <!-- Botão Voltar ao Topo -->
   <button id="btn-topo">↑</button>
 
-  <!-- JavaScript no final -->
-  <script src="script.js"></script>
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="social-icons">
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>Feito com ❤️ por Iasmim Nunes</p>
+        <p>&copy; 2025 Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
