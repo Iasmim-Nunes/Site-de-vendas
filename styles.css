@@ -7,8 +7,17 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #111;
+  background-image: url('linear.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
+  animation: fadeInBody 1.5s ease-in;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===== BARRA DE NAVEGAÇÃO ===== */
@@ -79,6 +88,18 @@ nav ul li a:hover {
   max-width: 600px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-section h1 {
@@ -160,7 +181,7 @@ section h2 {
   color: #eee;
 }
 
-/* ===== DESTAQUES ===== */
+/* ===== FEATURES / DESTAQUES ===== */
 .features {
   display: flex;
   justify-content: center;
@@ -210,7 +231,6 @@ section h2 {
   text-decoration: underline;
 }
 
-/* Fundo da seção */
 #destaques {
   background-image: url('imagens/fundo-destaques.jpg');
   background-size: cover;
@@ -218,7 +238,6 @@ section h2 {
   background-repeat: no-repeat;
 }
 
-/* ===== VANTAGENS ===== */
 #vantagens {
   background-image: url('imagens/fundo-vantagens.jpg');
   background-size: cover;
@@ -227,28 +246,12 @@ section h2 {
   text-align: center;
 }
 
-#vantagens .vantagem {
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.1em;
-  line-height: 1.8;
-}
-
-/* ===== LOJA ===== */
 #loja {
   background-image: url('imagens/fundo-loja.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   text-align: center;
-}
-
-#loja p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.1em;
-  line-height: 1.8;
-  color: #eee;
 }
 
 /* ===== FAQ ===== */
@@ -300,21 +303,85 @@ section h2 {
   font-size: 1.2em;
 }
 
-/* Seta gira quando ativo */
 .faq-item.active .arrow {
   transform: rotate(90deg);
 }
 
-.arrow {
-  transition: transform 0.3s ease;
+/* ===== BOTÃO TOPO ===== */
+#btn-topo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #00ccff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
 }
 
-/* seta rotaciona quando item está ativo */
-.faq-item.active .arrow {
-  transform: rotate(90deg);
+#btn-topo:hover {
+  background-color: #0099cc;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #111;
+  color: #eee;
+  padding: 30px 20px;
+  font-size: 0.9em;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left p {
+  margin: 5px 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-right a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #00ccff;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ccff;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -337,5 +404,12 @@ section h2 {
   .features {
     flex-direction: column;
     align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
   }
 }
