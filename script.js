@@ -9,7 +9,8 @@ function enviarEmail() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// FAQ Accordion
+function ativarFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach(item => {
@@ -19,32 +20,61 @@ document.addEventListener('DOMContentLoaded', () => {
     question.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
 
-      // Fecha todos os outros
       faqItems.forEach(i => {
         i.classList.remove('active');
         i.querySelector('.faq-answer').style.display = 'none';
       });
 
-      // Se estava fechado, abre este
       if (!isOpen) {
         item.classList.add('active');
         answer.style.display = 'block';
       }
     });
   });
-});
+}
 
 // Botão Voltar ao Topo
-const btnTopo = document.getElementById("btn-topo");
+function ativarBotaoTopo() {
+  const btnTopo = document.getElementById("btn-topo");
 
-window.onscroll = function() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    btnTopo.style.display = "block";
-  } else {
-    btnTopo.style.display = "none";
-  }
-};
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btnTopo.style.display = "block";
+    } else {
+      btnTopo.style.display = "none";
+    }
+  });
 
-btnTopo.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  btnTopo.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// Animações ao entrar na tela
+function animarAoScroll() {
+  const elementos = document.querySelectorAll('.feature-card, .faq-item');
+
+  const options = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  elementos.forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Inicialização
+window.addEventListener('DOMContentLoaded', () => {
+  ativarFAQ();
+  ativarBotaoTopo();
+  animarAoScroll();
 });
