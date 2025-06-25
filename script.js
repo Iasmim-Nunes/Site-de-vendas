@@ -71,7 +71,6 @@ function animarAoScroll() {
     observer.observe(el);
   });
 }
-
 // Inicialização
 window.addEventListener('DOMContentLoaded', () => {
   ativarFAQ();
